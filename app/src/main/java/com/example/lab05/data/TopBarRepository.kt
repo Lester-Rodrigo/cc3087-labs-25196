@@ -4,7 +4,7 @@ import com.example.lab05.model.TopBar
 
 object TopBarRepository {
         fun getTopBar() = TopBar(
-            title = "Promociones",
+            title = "Lecturas",
             logo = "M",
             extraText = "Ordenar"
         )

@@ -32,7 +32,7 @@ fun MediumTopBar(
             modifier = Modifier
                 .size(35.dp)
                 .clip(CircleShape)
-                .background(Color.Red) ,
+                .background(Color.Green) ,
             contentAlignment = Alignment.Center
         ){
             Text(

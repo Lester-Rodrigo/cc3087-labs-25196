@@ -43,7 +43,7 @@ fun MediumArticle(
                     modifier = Modifier
                         .size(20.dp)
                         .clip(CircleShape)
-                        .background(Color.Red)
+                        .background(article.boxColor)
                 ) { }
                 Text(
                     text = article.name,

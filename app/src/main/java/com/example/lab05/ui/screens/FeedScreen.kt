@@ -12,21 +12,26 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.lab05.data.ArticleRepository
+import com.example.lab05.data.TabsRepository
 import com.example.lab05.data.TopBarRepository
 import com.example.lab05.ui.components.MediumArticle
 import com.example.lab05.ui.components.MediumTopBar
+import com.example.lab05.ui.components.MediumTabs
 
 @Preview(showSystemUi = true, device = "spec:width=1080px,height=2340px,dpi=440,cutout=double")
 @Composable
 fun FeedScreen(
     modifier: Modifier = Modifier
 ) {
-    val articles = ArticleRepository.getList()
     val topBar = TopBarRepository.getTopBar()
+    val tabs = TabsRepository.getTabs()
+    val articles = ArticleRepository.getList()
     Column(
         modifier = modifier
     ) {
         MediumTopBar(topBar = topBar)
+        MediumTabs(tabs = tabs
+        )
         Box(
             modifier = Modifier
                 .fillMaxWidth()
