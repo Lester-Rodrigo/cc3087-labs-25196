@@ -5,6 +5,7 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.runtime.Composable
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material3.Text
@@ -42,11 +43,12 @@ fun MediumTopBar(
         }
         Text(
             text = topBar.title,
-            fontSize = 30.sp
+            fontSize = 30.sp,
             )
         Text(
             text = topBar.extraText,
-            fontSize = 30.sp
+            fontSize = 20.sp,
+            modifier = Modifier.padding(start = 90.dp)
             )
     }
 }
