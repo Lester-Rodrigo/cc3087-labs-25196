@@ -8,5 +8,7 @@ data class Article(
     val resume: String,
     val readTime: Int,
     val date: String,
+    val isAuthorFollowed: Boolean,
+    val isFeatured: Boolean,
     val boxColor: Color
 )

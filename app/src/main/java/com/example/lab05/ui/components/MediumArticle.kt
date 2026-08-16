@@ -50,10 +50,20 @@ fun MediumArticle(
                     color = Gray
                 )
             }
-            Text(
-                text = article.title,
-                fontSize = 24.sp
-            )
+            Row(
+                verticalAlignment = Alignment.CenterVertically,
+                horizontalArrangement = Arrangement.spacedBy(10.dp)
+            ) {
+                Text(
+                    text = article.title,
+                    fontSize = 24.sp
+                )
+                Box(
+                    modifier = Modifier
+                        .size(60.dp)
+                        .background(article.boxColor)
+                ){}
+            }
             Text(
                 text = article.resume,
                 textAlign = TextAlign.Justify

@@ -12,6 +12,8 @@ object ArticleRepository {
             resume = "El mejor pollo que podras probar en tu vida",
             readTime = 5,
             date = "12 dic",
+            isAuthorFollowed = true,
+            isFeatured = false,
             boxColor = Color.Red
         ),
         Article (
@@ -20,6 +22,8 @@ object ArticleRepository {
             resume = "Secreto sobre cómo mejorar el sabor de cualquier pizza instantánea",
             readTime = 12,
             date = "9 enero",
+            isAuthorFollowed = false,
+            isFeatured = true,
             boxColor = Color.Blue
         ),
         Article (
@@ -28,6 +32,8 @@ object ArticleRepository {
             resume = "Te enseño a hacer sandwiches duraderos, para que viaje a donde viajes no se arruinen ni se mojen ",
             readTime = 9,
             date = "15 Abril",
+            isAuthorFollowed = true,
+            isFeatured = true,
             boxColor = Color.Yellow
         ),
     )
