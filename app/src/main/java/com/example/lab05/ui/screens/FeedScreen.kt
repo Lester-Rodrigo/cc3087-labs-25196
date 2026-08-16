@@ -7,13 +7,15 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.lab05.data.ArticleRepository
-import com.example.lab05.data.TabsRepository
-import com.example.lab05.data.TopBarRepository
 import com.example.lab05.ui.components.MediumArticle
 import com.example.lab05.ui.components.MediumTopBar
 import com.example.lab05.ui.components.MediumTabs
@@ -23,14 +25,15 @@ import com.example.lab05.ui.components.MediumTabs
 fun FeedScreen(
     modifier: Modifier = Modifier
 ) {
-    val topBar = TopBarRepository.getTopBar()
-    val tabs = TabsRepository.getTabs()
+    var selectedTab by remember { mutableStateOf("Para ti") }
     val articles = ArticleRepository.getList()
     Column(
         modifier = modifier
     ) {
-        MediumTopBar(topBar = topBar)
-        MediumTabs(tabs = tabs
+        MediumTopBar()
+        MediumTabs(
+            selectedTab = selectedTab,
+            onTabSelected = { newTab -> selectedTab = newTab }
         )
         Box(
             modifier = Modifier

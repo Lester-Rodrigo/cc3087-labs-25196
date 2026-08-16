@@ -7,30 +7,30 @@ import com.example.lab05.model.Article
 object ArticleRepository {
     fun getList() = listOf<Article>(
         Article (
-            name = "Ana Robles",
+            author = "Ana Robles",
             title = "Pollo dorarito al horno con cocción lenta",
-            resume = "El mejor pollo que podras probar en tu vida",
-            readTime = 5,
+            excerpt = "El mejor pollo que podras probar en tu vida",
+            readingMinutes = 5,
             date = "12 dic",
             isAuthorFollowed = true,
             isFeatured = false,
             boxColor = Color.Red
         ),
         Article (
-            name = "Pablo Hernández",
+            author = "Pablo Hernández",
             title = "Pizza instantánea, pero sabe a recien hecha",
-            resume = "Secreto sobre cómo mejorar el sabor de cualquier pizza instantánea",
-            readTime = 12,
+            excerpt = "Secreto sobre cómo mejorar el sabor de cualquier pizza instantánea",
+            readingMinutes = 12,
             date = "9 enero",
             isAuthorFollowed = false,
             isFeatured = true,
             boxColor = Color.Blue
         ),
         Article (
-            name = "Timoteo Sanches",
+            author = "Timoteo Sanches",
             title = "Sandwich de viaje",
-            resume = "Te enseño a hacer sandwiches duraderos, para que viaje a donde viajes no se arruinen ni se mojen ",
-            readTime = 9,
+            excerpt = "Te enseño a hacer sandwiches duraderos, para que viaje a donde viajes no se arruinen ni se mojen ",
+            readingMinutes = 9,
             date = "15 Abril",
             isAuthorFollowed = true,
             isFeatured = true,

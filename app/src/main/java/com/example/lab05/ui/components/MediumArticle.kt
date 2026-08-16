@@ -46,17 +46,19 @@ fun MediumArticle(
                         .background(article.boxColor)
                 ) { }
                 Text(
-                    text = article.name,
+                    text = article.author,
                     color = Gray
                 )
             }
             Row(
                 verticalAlignment = Alignment.CenterVertically,
-                horizontalArrangement = Arrangement.spacedBy(10.dp)
+                horizontalArrangement = Arrangement.spacedBy(8.dp),
+                modifier = modifier.fillMaxWidth()
             ) {
                 Text(
                     text = article.title,
-                    fontSize = 24.sp
+                    fontSize = 24.sp,
+                    modifier = Modifier.weight(1f)
                 )
                 Box(
                     modifier = Modifier
@@ -65,11 +67,11 @@ fun MediumArticle(
                 ){}
             }
             Text(
-                text = article.resume,
+                text = article.excerpt,
                 textAlign = TextAlign.Justify
             )
             Text(
-                text = "${article.readTime} min de lectura · ${article.date}"
+                text = "${article.readingMinutes} min de lectura · ${article.date}"
             )
         }
     }
@@ -84,7 +86,7 @@ fun MediumArticlePreview(
     val resume = "Tres decisiones de arranque que nadie revisa hasta que ya es tarde"
     val readTime = 5
     val date = "12 dic"
-    Row() {
+    Row {
         Column(
             verticalArrangement = Arrangement.spacedBy(8.dp)
         ) {
