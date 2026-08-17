@@ -28,7 +28,8 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.text.style.LineHeightStyle
+import androidx.compose.material3.TextButton
+import androidx.compose.ui.text.style.TextAlign
 
 @Preview(showSystemUi = true, device = "spec:width=1080px,height=2340px,dpi=440,cutout=double")
 @Composable
@@ -38,6 +39,8 @@ fun FeedScreen(
     var selectedTab by rememberSaveable { mutableStateOf("Para ti") }
     var searchQuery by rememberSaveable {mutableStateOf("")}
     var showShortReadsOnly by rememberSaveable {mutableStateOf(false)}
+    //Prueba A: Variable local ordinaria
+    var applauseCounter = 0
     val articles = ArticleRepository.getArticles()
     val visibleArticles = articles.filter { article ->
         val matchesTab = when (selectedTab) {
@@ -99,16 +102,31 @@ fun FeedScreen(
             Text(
                 text = "Solo lecturas cortas",
                 modifier = Modifier.padding( start = 8.dp)
+                    .weight(1f)
             )
-            Spacer( modifier = Modifier.weight(1f))
-            Text(
-                text = if ( countResult == 1) {
-                    "1 Resultado"
-                } else {
-                    "$countResult resultados"
+            TextButton(
+                onClick = {
+                    applauseCounter++
                 }
-            )
+            ) {
+                Text(
+                    text = "Aplaudir · $applauseCounter"
+                )
+            }
         }
+        Text(
+            text = if ( countResult == 1) {
+                "1 Resultado"
+            } else {
+                "$countResult resultados"
+            },
+            modifier = Modifier.fillMaxWidth()
+                .padding(
+                horizontal = 16.dp,
+                vertical = 4.dp
+            ),
+            textAlign = TextAlign.End
+        )
        if ( visibleArticles.isEmpty()) {
            Column(
                modifier = Modifier.fillMaxWidth()
