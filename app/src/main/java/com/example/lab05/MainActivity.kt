@@ -1,6 +1,7 @@
 package com.example.lab05
 
 import android.os.Bundle
+import android.util.Log
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
@@ -12,17 +13,44 @@ import com.example.lab05.ui.screens.FeedScreen
 import com.example.lab05.ui.theme.Lab05Theme
 
 class MainActivity : ComponentActivity() {
+    companion object {
+        private const val TAG = "LAB6_25196"
+    }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        Log.d(TAG, "onCreate")
         enableEdgeToEdge()
         setContent {
             Lab05Theme {
-                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
+                Scaffold(
+                    modifier = Modifier.fillMaxSize()
+                ) { innerPadding ->
                     FeedScreen(
                         modifier = Modifier.padding(innerPadding)
                     )
                 }
             }
         }
+    }
+
+    override fun onStart() {
+        super.onStart()
+        Log.d(TAG, "onStart")
+    }
+    override fun onResume() {
+        super.onResume()
+        Log.d(TAG, "onResume")
+    }
+    override fun onPause() {
+        super.onPause()
+        Log.d(TAG, "onPause")
+    }
+    override fun onStop() {
+        super.onStop()
+        Log.d(TAG, "onStop")
+    }
+    override fun onDestroy() {
+        Log.d(TAG, "onDestroy")
+        super.onDestroy()
     }
 }
