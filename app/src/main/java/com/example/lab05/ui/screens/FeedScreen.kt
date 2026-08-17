@@ -4,7 +4,6 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
@@ -29,6 +28,7 @@ import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.material3.TextButton
+import androidx.compose.runtime.remember
 import androidx.compose.ui.text.style.TextAlign
 
 @Preview(showSystemUi = true, device = "spec:width=1080px,height=2340px,dpi=440,cutout=double")
@@ -40,7 +40,7 @@ fun FeedScreen(
     var searchQuery by rememberSaveable {mutableStateOf("")}
     var showShortReadsOnly by rememberSaveable {mutableStateOf(false)}
     //Prueba A: Variable local ordinaria
-    var applauseCounter = 0
+    var applauseCounter by remember { mutableStateOf(0) }
     val articles = ArticleRepository.getArticles()
     val visibleArticles = articles.filter { article ->
         val matchesTab = when (selectedTab) {
