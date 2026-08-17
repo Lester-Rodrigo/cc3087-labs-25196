@@ -28,7 +28,6 @@ import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.material3.TextButton
-import androidx.compose.runtime.remember
 import androidx.compose.ui.text.style.TextAlign
 
 @Preview(showSystemUi = true, device = "spec:width=1080px,height=2340px,dpi=440,cutout=double")
@@ -39,8 +38,8 @@ fun FeedScreen(
     var selectedTab by rememberSaveable { mutableStateOf("Para ti") }
     var searchQuery by rememberSaveable {mutableStateOf("")}
     var showShortReadsOnly by rememberSaveable {mutableStateOf(false)}
-    //Prueba b: Variable local con remember
-    var applauseCounter by remember { mutableStateOf(0) }
+    //Prueba C: Variable local con remember
+    var applauseCounter by rememberSaveable { mutableStateOf(0) }
     val articles = ArticleRepository.getArticles()
     val visibleArticles = articles.filter { article ->
         val matchesTab = when (selectedTab) {
