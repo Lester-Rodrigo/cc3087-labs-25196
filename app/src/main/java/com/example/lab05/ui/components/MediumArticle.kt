@@ -15,7 +15,6 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.graphics.RectangleShape
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -81,10 +80,10 @@ fun MediumArticle(
 @Composable
 fun MediumArticlePreview(
 ) {
-    val name = "Ana Robles"
+    val author = "Ana Robles"
     val title = "Por qué su primera app se siente lenta"
-    val resume = "Tres decisiones de arranque que nadie revisa hasta que ya es tarde"
-    val readTime = 5
+    val excerpt = "Tres decisiones de arranque que nadie revisa hasta que ya es tarde"
+    val readingMinutes = 5
     val date = "12 dic"
     Row {
         Column(
@@ -103,7 +102,7 @@ fun MediumArticlePreview(
                         .background(Color.Red)
                 ) {}
                 Text(
-                    text = name,
+                    text = author,
                     color = Gray
                 )
             }
@@ -112,11 +111,11 @@ fun MediumArticlePreview(
                 fontSize = 24.sp
             )
             Text(
-                text = resume,
+                text = excerpt,
                 textAlign = TextAlign.Justify
             )
             Text(
-                text = "$readTime min de lectura · $date"
+                text = "$readingMinutes min de lectura · $date"
             )
             Box(
                 modifier = Modifier

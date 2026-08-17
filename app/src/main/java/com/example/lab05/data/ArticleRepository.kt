@@ -5,7 +5,7 @@ import androidx.compose.ui.graphics.Color
 import com.example.lab05.model.Article
 
 object ArticleRepository {
-    fun getList() = listOf<Article>(
+    fun getArticles() = listOf<Article>(
         Article (
             author = "Ana Robles",
             title = "Pollo dorarito al horno con cocción lenta",
