@@ -39,7 +39,7 @@ fun FeedScreen(
     var selectedTab by rememberSaveable { mutableStateOf("Para ti") }
     var searchQuery by rememberSaveable {mutableStateOf("")}
     var showShortReadsOnly by rememberSaveable {mutableStateOf(false)}
-    //Prueba A: Variable local ordinaria
+    //Prueba b: Variable local con remember
     var applauseCounter by remember { mutableStateOf(0) }
     val articles = ArticleRepository.getArticles()
     val visibleArticles = articles.filter { article ->
